@@ -36,3 +36,26 @@ data[0].shape
 
 data.shape
 
+data.min()
+
+data.max()
+
+data[0]
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(data, df.target, test_size=0.3)
+X_train.shape, X_test.shape, y_train.shape, y_test.shape
+
+from sklearn.ensemble import RandomForestClassifier
+rf = RandomForestClassifier()
+rf.fit(X_train, y_train)
+RandomForestClassifier()
+
+y_pred = rf.predict(X_test)
+y_pred
+
+from sklearn.metrics import confusion_matrix, classification_report
+confusion_matrix(y_test, y_pred)
+
+print(classification_report(y_test, y_pred))
+
